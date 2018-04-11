@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head  th:replace ="view/bar :: head" ></head>
+
+<style th:replace ="view/bar :: style"></style>
+
+<body th:replace ="view/bar :: body"></body>
+    
+<body style="background: url(page.jpg);"> 
+       
+  <form  action = "/view/Template" method="POST"  >
+   
+    <p> <h3 th:text="${q}">Question:</h3> </p>
+    <p>True : <input type="radio"    name="Answer" value="True" checked="true"></input>
+    False: <input type="radio"  name="Answer" value ="False"></input> </p>
+	<p>	
+    <button class="button">Next</button>
+    </p>
+    
+</form>
+</body>
+</html>

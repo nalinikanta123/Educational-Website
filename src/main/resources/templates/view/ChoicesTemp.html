@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head  th:replace ="view/bar :: head" ></head>
+
+<style th:replace ="view/bar :: style"></style>
+
+<body th:replace ="view/bar :: body"></body>
+
+<body style="background: url(page.jpg);"> 
+
+	<form action="/ChoicesTemp" method="POST">
+
+		<p>
+		<h3>Question:</h3>
+		<input type="text" name="Question" required="required" size ="100"></input>
+		</p>
+		<p>A : <input type="text"  required="required"  name="A"  size ="50"></input></p>
+		<p>B : <input type="text"  required="required"  name="B" size ="50"></input> </p>
+		<p>C : <input type="text" required="required" name="C" size ="50"></input></p>
+		<p>D : <input type="text"  required="required"  name="D" size ="50"></input></p>
+		<p>
+			<button class="button">Next</button>
+		</p>
+
+	</form>
+</body>
+</html>

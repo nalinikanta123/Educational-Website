@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head  th:replace ="view/bar :: head" ></head>
+
+<style th:replace ="view/bar :: style"></style>
+
+<body th:replace ="view/bar :: body"></body>
+
+<body >
+    
+<form  action = "/view/login" method="POST"  >
+    <p>
+    <h3>Email:</h3><input type="text" name="email"  required="required" ></input> 
+    </p>
+    
+    <p>
+    <h3>Password :</h3><input type="password"  name="password" required="required"></input> 
+    </p>
+    
+    <p><h3 th:text ="${wrong}" ></h3></p>
+<button class="button">login</button>
+</form>
+</body>
+</html>

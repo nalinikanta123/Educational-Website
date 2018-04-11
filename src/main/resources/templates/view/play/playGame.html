@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+<link href="@{/CSS/style.css}" rel="stylesheet" type="text/css" />
+</head>
+<head>
+<link href="@{/CSS/style.css}" rel="stylesheet" type="text/css" />
+</head>
+<style th:replace="view/bar :: style"></style>
+<body th:replace="view/bar :: body"></body>
+<body>
+
+	<div th:if="${loginuser.type == 'Student'}">
+		<form action="/view/home" th:object="${answer}" method="post">
+			<table>
+				<tr th:each="question, stat : ${game.questions}">
+					<td>Question:
+						<p th:text="${game.questions[__${stat.index}__].text}"></p>
+						<p>Answer:</p>
+						<span
+							th:each="question, statt : ${game.questions[__${stat.index}__].answers}">
+							<span
+								th:text="${game.questions[__${stat.index}__].answers[__${statt.index}__]}">
+							</span><input type="radio" th:name="|answer.answers[__${stat.index}__]|"
+								th:value="${game.questions[__${stat.index}__].answers[__${statt.index}__]}"
+								th:field="${answer.answers[__${stat.index}__]}" />
+						</span>
+					</td>
+				</tr>
+			</table>
+			<input type="Submit" />
+		</form>
+	</div>
+
+	<div th:unless="${loginuser.type == 'Student'}">
+		<h2>Not allowed to Play</h2>
+	</div>
+
+</body>
+</html>

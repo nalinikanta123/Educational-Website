@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head  th:replace ="view/bar :: head" ></head>
+
+<style th:replace ="view/bar :: style"></style>
+
+<body th:replace ="view/bar :: body"></body>
+
+<body style="background: url(page.jpg);"> 
+
+	<form action="/view/ShowChoicesTemp" method="POST">
+
+		
+		<p> <h3 th:text="${q0}" > Question:</h3> </p>
+		<p th:text="${q1}" > </p><p><input type="radio"  value="first" checked="true" name ="Ans"></input> </p>
+		<p th:text="${q2}" ></p><p><input type="radio"   value="second" name ="Ans"></input> </p>
+		<p th:text="${q3}" ></p><p><input type ="radio"   value="third" name ="Ans"></input></p>
+		<p th:text="${q4}" ></p><p><input type="radio"   value="fourth" name ="Ans"></input></p>
+		<p>
+			<button class="button">Next</button>
+			
+		1.<input type="checkbox" name = "salma">
+		2.<input type="checkbox" name = "salma">
+		
+		</p>
+
+	</form>
+</body>
+</html>

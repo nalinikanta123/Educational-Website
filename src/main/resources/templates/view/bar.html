@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head lang="en" th:fragment="head">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet" media="screen"/>
+<link href="@{/CSS/style.css}" rel="stylesheet" type="text/css" />
+</head>
+
+
+<style th:fragment="style">
+body {
+	margin: 0;
+}
+
+.icon-bar {
+	width: 100%;
+	background-color: #555;
+	overflow: auto;
+}
+
+.icon-bar a {
+	float: left;
+	width: 25%;
+	text-align: center;
+	padding: 15px 0;
+	transition: all 0.3s ease;
+	color: white;
+	font-size: 40px;
+}
+
+.icon-bar a:hover {
+	background-color: #300;
+}
+
+.active {
+	background-color: #4CAF50 !important;
+}
+
+.icon-bar2 {
+display: inline-block;
+	width: 20%;
+	height: 900px;
+	background-color: #555;
+	overflow: auto;
+	float: left;
+}
+
+.icon-bar2 a {
+	width: 20%;
+	text-align: center;
+	padding: 16px;
+	transition: all 0.3s ease;
+	color: #4CAF50;
+	font-size: 30px;
+}
+
+.icon-bar2 a:hover {
+	background-color: #000;
+}
+
+.active2 {
+	background-color: #4CAF50 !important;
+}
+
+</style>
+
+<body th:fragment="body" background="/images/page.jpg">
+
+	<div class="icon-bar">
+		<a class="active" href="#"><i class="fa fa-home"></i></a> <a href="#"><i
+			class="fa fa-search"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+		<a href="#"><i class="fa fa-globe"></i></a>
+	</div>
+
+
+	<div class="icon-bar2">
+			
+		<p th:each="category , iterStat : ${categoryList}">
+			<a th:href="@{'/category/'+${category.name}}"><span th:text="${category.name}"></span></a>			
+		</p>
+	</div>
+
+</body>
+
+</html>

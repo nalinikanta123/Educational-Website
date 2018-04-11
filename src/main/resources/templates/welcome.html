@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head  th:replace ="view/bar :: head" ></head>
+
+<style th:replace ="view/bar :: style"></style>
+
+<style>
+.button {
+  padding: 10px 15px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 9px #999;
+  position:absolute;
+  transition: .5s ease;
+  top: 67%;
+  left: 35%;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button2 {
+  padding: 10px 15px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 9px #999;
+  position:absolute;
+  transition: .5s ease;
+  top: 67%;
+  left: 55%;
+}
+
+.button2:hover {background-color: #3e8e41}
+
+.button2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+h2 {
+    position: absolute;
+     top: 58%;
+     left: 48%;
+}
+     
+h3 {
+    position: absolute;
+     top: 73%;
+     left: 45%;
+}
+</style>
+
+<body th:replace ="view/bar :: body"></body>
+<body >
+<h2>join us </h2>
+    <form action="/register" method="GET" >
+     <button class="button" name="type"  value="Student" >Register as Student</button>
+     <button class="button2" name= "type"  value="Teacher" >Register as Teacher</button>
+    </form>
+<h3>already have account? <a href="/login">log in</a> </h3>
+
+</body>
+</html>

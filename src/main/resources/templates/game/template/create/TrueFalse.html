@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+<link href="@{/CSS/style.css}" rel="stylesheet" type="text/css" />
+</head>
+
+<style th:replace="style/bar :: style"></style>
+
+<body th:replace="style/bar :: body"></body>
+
+<body>
+ <div th:if="${loginuser.type == 'Teacher'}">
+
+	<form th:object="${game}" method="post">
+		<table>
+			<tr th:each="question, stat : *{questions}">
+				<td>Question: <input type="text"th:text="&{questions[__${stat.index}__].text}" />
+					<p>Right Answer:</p> 
+			True: <input type="radio" name="choice"value="true" th:field="*{questions[__${stat.index}__].rightAnswer}" />
+			False: <input type="radio" name="choice" value="false"th:field="*{questions[__${stat.index}__].rightAnswer}" />
+				</td>
+			</tr>
+		</table>
+		<input type="Create" />
+	</form>
+	
+	</div>
+	<div th:unless="${loginuser.type == 'Teacher'}">
+		<h2>You are not a Teacher</h2>
+	</div>
+</body>
+</html>

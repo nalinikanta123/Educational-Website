@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head  th:replace ="view/bar :: head" ></head>
+<style th:replace ="view/bar :: style"></style>
+<body th:replace ="view/bar :: body"></body>
+<body>
+<h2>User information</h2>
+	<table cellpadding ="2" cellspacing="2">
+		<tr>
+			<th>Name: </th>
+			<td><span th:text ="${gameDetails.name}" ></span></td>
+		</tr>
+		
+		<tr>
+			<th>ID: </th>
+			<td><span th:text ="${gameDetails.ID}" ></span></td>
+		</tr>
+		
+		<tr>
+			<th>Email: </th>
+			<td><span th:text ="${gameDetails.templateNamel}" ></span></td>
+		</tr>
+		
+	</table>
+</body>
+</html>

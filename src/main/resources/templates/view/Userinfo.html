@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head  th:replace ="view/bar :: head" ></head>
+
+<style th:replace="view/bar :: style"></style>
+
+<body th:replace="view/bar :: body"></body>
+
+<body>
+	<h2>User information</h2>
+	<table cellpadding="2" cellspacing="2">
+
+		<tr>
+			<th>Profile :</th>
+			<td><img ng-src="data:image/jpeg;base64,{{user.picture}}" id="photo-id"/></td>
+		</tr>
+		<tr>
+			<th>Name :</th>
+			<td><span th:text="${user.userName}"></span></td>
+		</tr>
+
+		<tr>
+			<th>ID :</th>
+			<td><span th:text="${user.userID}"></span></td>
+		</tr>
+
+		<tr>
+			<th>Email :</th>
+			<td><span th:text="${user.email}"></span></td>
+		</tr>
+
+		<tr>
+			<th>Gender :</th>
+			<td><span th:text="${user.gender}"></span></td>
+		</tr>
+
+		<tr>
+			<th>User :</th>
+			<td><span th:text="${user.type}"></span></td>
+		</tr>
+
+	</table>
+</body>
+</html>

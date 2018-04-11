@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head  th:replace ="view/bar :: head" ></head>
+
+<style th:replace ="view/bar :: style"></style>
+
+<body th:replace ="view/bar :: body"></body>
+<body>
+	<h2>Games</h2>
+	<table cellpadding ="2" cellspacing="2" >
+		<tr>
+			<th>game name: </th>
+			<th>photo : </th>
+		</tr>
+		
+		<tr th:each = "gameDetails , iterStat : ${listOfGameDetails}" >	
+			 <td><a th:href = "@{'game/' + ${gameDetails.categoryName} + '/' + ${gameDetails.gameID}}" th:text ="${gameDetails.name}" ></a></td>
+			 <td><img ng-src="data:image/jpeg;base64,{{gameDetails.photo}}" id="photo-id"/></td>
+
+		</tr>
+		
+	</table>
+</body>
+</html>
